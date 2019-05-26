@@ -8,11 +8,11 @@ Using open Adb ports we can exploit a device
 
 # HOW TO INSTALL
 ```
-download adb -> https://www.xda-developers.com/install-adb-windows-macos-linux/
-put all the main files in the folder adb
+extract adb.rar to the phonesploit directory 
 git clone https://github.com/Zucccs/PhoneSploit
-
+cd PhoneSploit
+python2 main.py
 ```
 
 # ScreenShots
-![Screenshot](screenshot.png)
+![Screenshot](Screenshot.png)
