@@ -6,5 +6,13 @@ Using open Adb ports we can exploit a device
 
 <br> I will soon make a tutorial on how to use PhoneSploit
 
+# HOW TO INSTALL
+```
+download adb -> https://www.xda-developers.com/install-adb-windows-macos-linux/
+put all the main files in the folder adb
+git clone https://github.com/Zucccs/PhoneSploit
+
+```
 
 # ScreenShots
+![Screenshot](screenshot.png)
