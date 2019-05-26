@@ -1,4 +1,4 @@
-# PhoneSploit [:]
+# PhoneSploit 
 Using open Adb ports we can exploit a device
 <br> you can find open ports here https://www.shodan.io/search?query=android+debug+bridge+product%3A”Android+Debug+Bridge”
 <br>
