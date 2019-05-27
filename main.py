@@ -202,10 +202,10 @@ def main():
         main()      
 
 
-main()
+    main()
 
 
 
 #=============================  
 # Run
-main()
+ColoringModeStartup
