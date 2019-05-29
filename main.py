@@ -208,4 +208,4 @@ def main():
 
 #=============================  
 # Run
-ColoringModeStartup
+ColoringModeStartup()
