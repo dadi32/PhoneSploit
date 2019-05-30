@@ -4,7 +4,6 @@ Using open Adb ports we can exploit a device
 <br>
 <br> To find out how to access a local device --> https://www.youtube.com/watch?v=OlhCAX1qBQo
 
-<br> I will soon make a tutorial on how to use PhoneSploit
 
 # HOW TO INSTALL WINDOWS
 ```
@@ -19,6 +18,7 @@ python2 main.py
 ```
 git clone https://github.com/Zucccs/PhoneSploit
 cd PhoneSploit
+pip install colorama
 python2 main_linux.py
 ```
 
