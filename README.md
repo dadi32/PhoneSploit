@@ -6,17 +6,25 @@ Using open Adb ports we can exploit a device
 
 <br> I will soon make a tutorial on how to use PhoneSploit
 
-# HOW TO INSTALL
+# HOW TO INSTALL WINDOWS
 ```
+git clone https://github.com/Zucccs/PhoneSploit
 extract adb.rar to the phonesploit directory 
+cd PhoneSploit
+pip install colorama
+python2 main.py
+```
+
+# HOW TO INSTALL Linux
+```
 git clone https://github.com/Zucccs/PhoneSploit
 cd PhoneSploit
-python2 main.py
+python2 main_linux.py
 ```
 
 
 # VIDEO
-https://www.youtube.com/watch?v=6XNf9s-PZxY
+[![Watch the video](https://img.youtube.com/vi/6XNf9s-PZxY/hqdefault.jpg)](https://www.youtube.com/watch?v=6XNf9s-PZxY)
 
 # ScreenShots
 ![Screenshot](Screenshot.png)
