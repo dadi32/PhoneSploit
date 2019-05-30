@@ -207,4 +207,7 @@ def main():
 
 #=============================  
 # Run
+yn = raw_input(Fore.WHITE + "Have you already installed adb via command line "+Fore.GREEN + "Y"+Fore.WHITE+"/"+Fore.RED+"N "+Fore.WHITE)
+if yn == "n":
+    os.system("sudo apt install adb")
 main()
