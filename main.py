@@ -91,7 +91,7 @@ message = '''\n
 {0}[{1}5{0}] {2}Install an apk on a phone   {0}[{1}10{0}] {2}Turn The Device off                {0}[{1}15{0}] {2}Run an app
 
 
-{0}[{1}99{0}] {2}Exit
+{0}[{1}99{0}] {2}Exit   {0}[{1}0{0}] {2}Clear
 '''.format(Fore.WHITE, Fore.RED, Fore.YELLOW)
 #=============================
 #Main
@@ -200,9 +200,17 @@ def main():
         package_name = raw_input(Fore.WHITE + "phonesploit"+Fore.RED + "(app_run) "+Fore.WHITE + "> ")
         os.system("adb -s "+device_name+" shell monkey -p "+package_name+" -v 500")
         main()      
-    
+            
+    elif option  == '0':
+        os.system('cls')
+        os.system('clear')
+        banner_title = random.choice([logo_design_1,logo_design_2,logo_design_3,logo_design_4])
+        print Fore.RED + banner_title  
+        print message
+
     elif option == '99':
         exit()
+
 
     main()
 
