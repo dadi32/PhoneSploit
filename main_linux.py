@@ -200,6 +200,8 @@ def main():
         os.system("adb -s "+device_name+" shell monkey -p "+package_name+" -v 500")
         main()      
 
+    elif option  ==  '99':
+        exit()
 
     main()
 
