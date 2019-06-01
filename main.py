@@ -84,7 +84,7 @@ logo_design_4 = '''
           oNMm-  -mMNs'''
 
 message = '''\n
-{0}[{1}1{0}] {2}Show Connected Devices      {0}[{1}6{0}] {2}Screen record a phone               {0}[{1}11{0}] {2}Uninstall an app
+{0}[{1}1{0}] {2}Show Connected Devices      {0}[{1}6{0}] {2}Screen record a phone               {0}[{1}11{0}] {2}Uninstall an app                   {0}[{1}16{0}]{2} Port Forwarding
 {0}[{1}2{0}] {2}Disconect all devices       {0}[{1}7{0}] {2}Screen Shot a picture on a phone    {0}[{1}12{0}] {2}Show real time log of device
 {0}[{1}3{0}] {2}Connect a new phone         {0}[{1}8{0}] {2}Restart Server                      {0}[{1}13{0}] {2}Dump System Info
 {0}[{1}4{0}] {2}Access Shell on a phone     {0}[{1}9{0}] {2}Pull folders from phone to pc       {0}[{1}14{0}] {2}List all apps on a phone
@@ -200,7 +200,16 @@ def main():
         package_name = raw_input(Fore.WHITE + "phonesploit"+Fore.RED + "(app_run) "+Fore.WHITE + "> ")
         os.system("adb -s "+device_name+" shell monkey -p "+package_name+" -v 500")
         main()      
-            
+
+    elif option == '16':
+        print  ("\nEnter a device name.")
+        device_name = raw_input(Fore.WHITE + "phonesploit"+Fore.RED + "(port_forward) "+Fore.WHITE + "> ")
+        print  ("\nEnter a port on the device.")
+        port_device = raw_input(Fore.WHITE + "phonesploit"+Fore.RED + "(port_forward) "+Fore.WHITE + "> ")       
+        print  ("\nEnter a port to forward it too.")
+        forward_port = raw_input(Fore.WHITE + "phonesploit"+Fore.RED + "(port_forward) "+Fore.WHITE + "> ")
+        os.system("adb -s "+device_name+" forward tcp:"+port_device+" tcp:"+forward_port) 
+
     elif option  == '0':
         os.system('cls')
         os.system('clear')
