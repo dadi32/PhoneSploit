@@ -175,7 +175,7 @@ def main():
         device_name = raw_input(Fore.WHITE + "phonesploit"+Fore.RED + "(app_delete) "+Fore.WHITE + "> ")
         print  ("\nEnter a package name.")
         package_name = raw_input(Fore.WHITE + "phonesploit"+Fore.RED + "(app_delete) "+Fore.WHITE + "> ")
-        os.system("adb -s "+device_name+" unistall "+package_name)
+        os.system("adb -s "+device_name+" uninstall "+package_name)
 
     elif option == '12':
         print  ("\nEnter a device name.")
