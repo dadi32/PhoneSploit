@@ -1,4 +1,4 @@
-# coding: latin-1
+#-*- coding: utf-8 -*-
 
 #Coded By Zucccs
 # Enjoy
@@ -7,9 +7,13 @@
 #=============================
 #Imports
 import os
+import sys
 import random
 import time as  t
 from colorama import Fore, init
+
+reload(sys)
+sys.setdefaultencoding("utf-8")
 
 #=============================
 # Variables
@@ -42,8 +46,9 @@ load_count = 0
 #=============================
 # Graphics # http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
 
-arrow = Fore.RED + " └──>".decode("utf-8") + Fore.WHITE
-connect = Fore.RED + "│".decode("utf-8") + Fore.WHITE
+arrow = Fore.RED + "  └──>".decode("utf-8").strip() + Fore.WHITE
+arrow = str(arrow)
+connect = Fore.RED + "│".decode("utf-8").strip() + Fore.WHITE
 
 logo_design_1 = ('''
   {0}  ____  __                    _____       __      _ __ 
@@ -111,12 +116,12 @@ def main():
     elif option == '3':
         os.system("adb tcpip 5555")
         print ("\n[{0}+{1}] Enter a phones ip address.").format(Fore.RED, Fore.WHITE)
-        ip = raw_input (arrow+" phonesploit"+Fore.RED + "(connect_phone) "+Fore.WHITE + "> ")
+        ip = raw_input (" "+arrow+" phonesploit"+Fore.RED + "(connect_phone) "+Fore.WHITE + "> ")
         os.system("adb connect "+ip+":5555")
     
     elif option  == '4':
         print ("\n[{0}+{1}]Enter a device name.").format(Fore.RED, Fore.WHITE)
-        device_name = raw_input(arrow + "phonesploit"+Fore.RED + "(shell_on_phone) "+Fore.WHITE + "> ")
+        device_name = raw_input((arrow) + "phonesploit"+Fore.RED + "(shell_on_phone) "+Fore.WHITE + "> ")
         os.system("adb -s "+device_name+" shell")
 
     elif option == '5':
