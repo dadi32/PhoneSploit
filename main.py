@@ -47,24 +47,28 @@ arrow = Fore.RED + " └──>".decode("utf-8") + Fore.WHITE
 connect = Fore.RED + "│".decode("utf-8") + Fore.WHITE
 
 logo_design_1 = ('''
-    ____  __                    _____       __      _ __ 
+  {0}  ____  __                    _____       __      _ __ 
    / __ \/ /_  ____  ____  ___ / ___/____  / /___  (_) /_
   / /_/ / __ \/ __ \/ __ \/ _ \\__ \/ __ \/ / __ \/ / __/
- / ____/ / / / /_/ / / / /  __/__/ / /_/ / / /_/ / / /_  
+{1} / ____/ / / / /_/ / / / /  __/__/ / /_/ / / /_/ / / /_  
 /_/   /_/ /_/\____/_/ /_/\___/____/ .___/_/\____/_/\__/  
-                                 /_/''')
+                                 /_/''').format(Fore.GREEN, Fore.WHITE, Fore.RED)
 
-logo_design_2 = '''                                             
- _____ _               _____     _     _ _   
-|  _  | |_ ___ ___ ___|   __|___| |___|_| |_ 
-|   __|   | . |   | -_|__   | . | | . | |  _|
-|__|  |_|_|___|_|_|___|_____|  _|_|___|_|_|  
-                            |_|'''
+logo_design_2 = Fore.GREEN + '''                                             
+  .;'                     `;,
+ .;'  ,;'             `;,  `;,   {0}PhoneSploit
+.;'  ,;'  ,;'     `;,  `;,  `;,
+::   ::   :   {1}( ){0}   :   ::   ::  {1}Coded by Zucccs / Metachar{0}
+':.  ':.  ':. {1}/_\{0} ,:'  ,:'  ,:'
+ ':.  ':.    {1}/___\{0}    ,:'  ,:'   
+  ':.       {1}/_____\{0}      ,:'
+           {1}/       \\{0}
+'''.format(Fore.GREEN, Fore.WHITE, Fore.RED)
 
 logo_design_pre = '''
-╔═╗┬ ┬┌─┐┌┐┌┌─┐╔═╗┌─┐┬  ┌─┐┬┌┬┐
-╠═╝├─┤│ ││││├┤ ╚═╗├─┘│  │ ││ │ 
-╩  ┴ ┴└─┘┘└┘└─┘╚═╝┴  ┴─┘└─┘┴ ┴ '''
+{0}╔═╗{1}┬ ┬┌─┐┌┐┌┌─┐{0}╔═╗{1}┌─┐┬  ┌─┐┬┌┬┐
+{0}╠═╝{1}├─┤│ ││││├┤ {0}╚═╗{1}├─┘│  │ ││ │ 
+{0}╩  {1}┴ ┴└─┘┘└┘└─┘{0}╚═╝{1}┴  ┴─┘└─┘┴ ┴ '''.format(Fore.GREEN, Fore.WHITE, Fore.RED)
 logo_design_3 = logo_design_pre.decode("utf-8")
 
 logo_design_4 = '''
@@ -96,7 +100,7 @@ message = '''\n
 
 
 {0}[{1}99{0}] {2}Exit   {0}[{1}0{0}] {2}Clear
-'''.format(Fore.WHITE, Fore.RED, Fore.YELLOW)
+'''.format(Fore.CYAN, Fore.RED, Fore.GREEN)
 #=============================
 #Main
 def main():
@@ -107,18 +111,13 @@ def main():
         os.system("adb tcpip 5555")
         t.sleep(4)
         os.system('cls')
-        os.system('clear')
         banner_title = random.choice([logo_design_1,logo_design_2,logo_design_3,logo_design_4])
         print Fore.RED + banner_title  
         print message
         load_count += 1
     option = raw_input(Fore.WHITE + "phonesploit"+Fore.RED + "(main_menu) "+Fore.WHITE + "> ")
     if option == '1':
-        yn = raw_input(Fore.WHITE + "[+] Would you like to see advanced devices "+Fore.GREEN + "Y"+Fore.WHITE+"/"+Fore.RED+"N "+Fore.WHITE)
-        if yn.lower() == "y" or yn.lower() == "Y":
-            os.system("adb devices -l")
-        else:
-            os.system("adb devices")
+        os.system("adb devices -l")
     elif option  ==  '2':
         os.system("adb disconnect")
     elif option == '3':
@@ -225,7 +224,6 @@ def main():
 
     elif option  == '0':
         os.system('cls')
-        os.system('clear')
         banner_title = random.choice([logo_design_1,logo_design_2,logo_design_3,logo_design_4])
         print Fore.RED + banner_title  
         print message

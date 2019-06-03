@@ -41,26 +41,33 @@ load_count = 0
 
 #=============================
 # Graphics # http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
+
+arrow = Fore.RED + " └──>".decode("utf-8") + Fore.WHITE
+connect = Fore.RED + "│".decode("utf-8") + Fore.WHITE
+
 logo_design_1 = ('''
-    ____  __                    _____       __      _ __ 
+  {0}  ____  __                    _____       __      _ __ 
    / __ \/ /_  ____  ____  ___ / ___/____  / /___  (_) /_
   / /_/ / __ \/ __ \/ __ \/ _ \\__ \/ __ \/ / __ \/ / __/
- / ____/ / / / /_/ / / / /  __/__/ / /_/ / / /_/ / / /_  
+{1} / ____/ / / / /_/ / / / /  __/__/ / /_/ / / /_/ / / /_  
 /_/   /_/ /_/\____/_/ /_/\___/____/ .___/_/\____/_/\__/  
-                                 /_/''')
+                                 /_/''').format(Fore.GREEN, Fore.WHITE, Fore.RED)
 
-logo_design_2 = '''                                             
-██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗███████╗██████╗ ██╗      ██████╗ ██╗████████╗
-██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝██╔════╝██╔══██╗██║     ██╔═══██╗██║╚══██╔══╝
-██████╔╝███████║██║   ██║██╔██╗ ██║█████╗  ███████╗██████╔╝██║     ██║   ██║██║   ██║   
-██╔═══╝ ██╔══██║██║   ██║██║╚██╗██║██╔══╝  ╚════██║██╔═══╝ ██║     ██║   ██║██║   ██║   
-██║     ██║  ██║╚██████╔╝██║ ╚████║███████╗███████║██║     ███████╗╚██████╔╝██║   ██║   
-╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝╚══════╝╚═╝     ╚══════╝ ╚═════╝ ╚═╝   ╚═╝ '''
+logo_design_2 = Fore.GREEN + '''                                             
+  .;'                     `;,
+ .;'  ,;'             `;,  `;,   {0}PhoneSploit
+.;'  ,;'  ,;'     `;,  `;,  `;,
+::   ::   :   {1}( ){0}   :   ::   ::  {1}Coded by Zucccs / Metachar{0}
+':.  ':.  ':. {1}/_\{0} ,:'  ,:'  ,:'
+ ':.  ':.    {1}/___\{0}    ,:'  ,:'   
+  ':.       {1}/_____\{0}      ,:'
+           {1}/       \\{0}
+'''.format(Fore.GREEN, Fore.WHITE, Fore.RED)
 
 logo_design_pre = '''
-╔═╗┬ ┬┌─┐┌┐┌┌─┐╔═╗┌─┐┬  ┌─┐┬┌┬┐
-╠═╝├─┤│ ││││├┤ ╚═╗├─┘│  │ ││ │ 
-╩  ┴ ┴└─┘┘└┘└─┘╚═╝┴  ┴─┘└─┘┴ ┴ '''
+{0}╔═╗{1}┬ ┬┌─┐┌┐┌┌─┐{0}╔═╗{1}┌─┐┬  ┌─┐┬┌┬┐
+{0}╠═╝{1}├─┤│ ││││├┤ {0}╚═╗{1}├─┘│  │ ││ │ 
+{0}╩  {1}┴ ┴└─┘┘└┘└─┘{0}╚═╝{1}┴  ┴─┘└─┘┴ ┴ '''.format(Fore.GREEN, Fore.WHITE, Fore.RED)
 logo_design_3 = logo_design_pre.decode("utf-8")
 
 logo_design_4 = '''
@@ -84,15 +91,15 @@ logo_design_4 = '''
           oNMm-  -mMNs'''
 
 message = '''\n
-{0}[{1}1{0}] {2}Show Connected Devices      {0}[{1}6{0}] {2}Screen record a phone               {0}[{1}11{0}] {2}Uninstall an app               {0}[{1}16{0}]{2} Port Forwarding
+{0}[{1}1{0}] {2}Show Connected Devices      {0}[{1}6{0}] {2}Screen record a phone               {0}[{1}11{0}] {2}Uninstall an app                   {0}[{1}16{0}]{2} Port Forwarding
 {0}[{1}2{0}] {2}Disconect all devices       {0}[{1}7{0}] {2}Screen Shot a picture on a phone    {0}[{1}12{0}] {2}Show real time log of device
 {0}[{1}3{0}] {2}Connect a new phone         {0}[{1}8{0}] {2}Restart Server                      {0}[{1}13{0}] {2}Dump System Info
 {0}[{1}4{0}] {2}Access Shell on a phone     {0}[{1}9{0}] {2}Pull folders from phone to pc       {0}[{1}14{0}] {2}List all apps on a phone
 {0}[{1}5{0}] {2}Install an apk on a phone   {0}[{1}10{0}] {2}Turn The Device off                {0}[{1}15{0}] {2}Run an app
 
 
-{0}[{1}99{0}] {2}Exit   {0}[{1}0{0}] {2}Clear Screen
-'''.format(Fore.WHITE, Fore.RED, Fore.YELLOW)
+{0}[{1}99{0}] {2}Exit   {0}[{1}0{0}] {2}Clear
+'''.format(Fore.CYAN, Fore.RED, Fore.GREEN)
 #=============================
 #Main
 def main():
@@ -103,18 +110,13 @@ def main():
         os.system("adb tcpip 5555")
         t.sleep(4)
         os.system('cls')
-        os.system('clear')
         banner_title = random.choice([logo_design_1,logo_design_2,logo_design_3,logo_design_4])
         print Fore.RED + banner_title  
         print message
         load_count += 1
     option = raw_input(Fore.WHITE + "phonesploit"+Fore.RED + "(main_menu) "+Fore.WHITE + "> ")
     if option == '1':
-        yn = raw_input(Fore.WHITE + "[+] Would you like to see advanced devices "+Fore.GREEN + "Y"+Fore.WHITE+"/"+Fore.RED+"N "+Fore.WHITE)
-        if yn.lower() == "y" or yn.lower() == "Y":
             os.system("adb devices -l")
-        else:
-            os.system("adb devices")
     elif option  ==  '2':
         os.system("adb disconnect")
     elif option == '3':
@@ -221,7 +223,6 @@ def main():
 
     elif option  == '0':
         os.system('cls')
-        os.system('clear')
         banner_title = random.choice([logo_design_1,logo_design_2,logo_design_3,logo_design_4])
         print Fore.RED + banner_title  
         print message
@@ -233,7 +234,8 @@ def main():
     main()
 
 
-#=============================  
+
+#=============================
 # Run
 yn = raw_input(Fore.WHITE + "Have you already installed adb via command line "+Fore.GREEN + "Y"+Fore.WHITE+"/"+Fore.RED+"N "+Fore.WHITE)
 if yn == "n":
