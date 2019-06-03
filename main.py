@@ -104,17 +104,6 @@ message = '''\n
 #=============================
 #Main
 def main():
-    global load_count
-    os.chdir(CurrentDir+"//adb")
-    while load_count == 0:
-        print (Fore.RED + "Starting  adb server..")
-        os.system("adb tcpip 5555")
-        t.sleep(4)
-        os.system('cls')
-        banner_title = random.choice([logo_design_1,logo_design_2,logo_design_3,logo_design_4])
-        print Fore.RED + banner_title  
-        print message
-        load_count += 1
     option = raw_input(Fore.WHITE + "phonesploit"+Fore.RED + "(main_menu) "+Fore.WHITE + "> ")
     if option == '1':
         os.system("adb devices -l")
@@ -238,4 +227,12 @@ def main():
 
 #=============================  
 # Run
+os.chdir(CurrentDir+"//adb")
+print (Fore.RED + "Starting  adb server..")
+os.system("adb tcpip 5555")
+t.sleep(4)
+os.system('cls')
+banner_title = random.choice([logo_design_1,logo_design_2,logo_design_3,logo_design_4])
+print Fore.RED + banner_title  
+print message
 ColoringModeStartup()

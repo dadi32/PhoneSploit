@@ -42,7 +42,6 @@ load_count = 0
 #=============================
 # Graphics # http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
 
-load_counts = 0
 arrow = Fore.RED + " └──>".decode("utf-8") + Fore.WHITE
 connect = Fore.RED + "│".decode("utf-8") + Fore.WHITE
 
@@ -104,16 +103,6 @@ message = '''\n
 #=============================
 #Main
 def main():
-    global load_counts
-    while load_count == 0:
-        print (Fore.RED + "Starting  adb server..")
-        os.system("adb tcpip 5555")
-        t.sleep(4)
-        os.system('cls')
-        banner_title = random.choice([logo_design_1,logo_design_2,logo_design_3,logo_design_4])
-        print Fore.RED + banner_title  
-        print message
-        load_count += 1
     option = raw_input(Fore.WHITE + "phonesploit"+Fore.RED + "(main_menu) "+Fore.WHITE + "> ")
     if option == '1':
             os.system("adb devices -l")
@@ -240,4 +229,11 @@ def main():
 yn = raw_input(Fore.WHITE + "Have you already installed adb via command line "+Fore.GREEN + "Y"+Fore.WHITE+"/"+Fore.RED+"N "+Fore.WHITE)
 if yn == "n":
     os.system("sudo apt install adb")
+print (Fore.RED + "Starting  adb server..")
+os.system("adb tcpip 5555")
+t.sleep(4)
+os.system('cls')
+banner_title = random.choice([logo_design_1,logo_design_2,logo_design_3,logo_design_4])
+print Fore.RED + banner_title  
+print message
 main()
