@@ -92,11 +92,11 @@ logo_design_4 = '''
           oNMm-  -mMNs'''
 
 message = '''\n
-{0}[{1}1{0}] {2}Show Connected Devices      {0}[{1}6{0}] {2}Screen record a phone               {0}[{1}11{0}] {2}Uninstall an app                   {0}[{1}17{0}]{2} Grab wpa_supplicant
-{0}[{1}2{0}] {2}Disconect all devices       {0}[{1}7{0}] {2}Screen Shot a picture on a phone    {0}[{1}12{0}] {2}Show real time log of device       {0}[{1}18{0}]{2} Show Mac/Inet
-{0}[{1}3{0}] {2}Connect a new phone         {0}[{1}8{0}] {2}Restart Server                      {0}[{1}13{0}] {2}Dump System Info                   {0}[{1}19{0}]{2} Extract apk from app
-{0}[{1}4{0}] {2}Access Shell on a phone     {0}[{1}9{0}] {2}Pull folders from phone to pc       {0}[{1}14{0}] {2}List all apps on a phone           {0}[{1}20{0}]{2} Get Battery Status
-{0}[{1}5{0}] {2}Install an apk on a phone   {0}[{1}10{0}] {2}Turn The Device off                {0}[{1}15{0}] {2}Run an app                         {0}[{1}21{0}]{2} NetStat
+{0}[{1}1{0}] {2}Show Connected Devices      {0}[{1}6{0}] {2}Screen record a phone               {0}[{1}11{0}] {2}Uninstall an app                   {0}[{1}16{0}]{2} Port Forwarding
+{0}[{1}2{0}] {2}Disconect all devices       {0}[{1}7{0}] {2}Screen Shot a picture on a phone    {0}[{1}12{0}] {2}Show real time log of device
+{0}[{1}3{0}] {2}Connect a new phone         {0}[{1}8{0}] {2}Restart Server                      {0}[{1}13{0}] {2}Dump System Info
+{0}[{1}4{0}] {2}Access Shell on a phone     {0}[{1}9{0}] {2}Pull folders from phone to pc       {0}[{1}14{0}] {2}List all apps on a phone
+{0}[{1}5{0}] {2}Install an apk on a phone   {0}[{1}10{0}] {2}Turn The Device off                {0}[{1}15{0}] {2}Run an app
 
 
 {0}[{1}99{0}] {2}Exit   {0}[{1}0{0}] {2}Clear
@@ -110,7 +110,6 @@ def main():
     elif option  ==  '2':
         os.system("adb disconnect")
     elif option == '3':
-        os.system("adb tcpip 5555")
         print ("\n[{0}+{1}] Enter a phones ip address.").format(Fore.RED, Fore.WHITE)
         ip = raw_input (arrow+" phonesploit"+Fore.RED + "(connect_phone) "+Fore.WHITE + "> ")
         os.system("adb connect "+ip+":5555")
@@ -212,60 +211,11 @@ def main():
         forward_port = raw_input("        "+arrow + "phonesploit"+Fore.RED + "(port_forward) "+Fore.WHITE + "> ")
         os.system("adb -s "+device_name+" forward tcp:"+port_device+" tcp:"+forward_port) 
 
-    elif option == '17':
-        try:
-            print  ("[{0}+{1}]Enter a device name.").format(Fore.RED, Fore.WHITE)
-            device_name = raw_input(arrow + "phonesploit"+Fore.RED + "(wpa_grab) "+Fore.WHITE + "> ")
-            print (Fore.WHITE + "    [{0}+{1}]{1}THE DEVICE NEEDS TO BE ROOTED TO CONTINUE TO EXIT USE CTRL +C").format(Fore.RED, Fore.WHITE)
-            print("     "+connect)
-            print  ("    [{0}+{1}]Enter where you want the file to be saved.").format(Fore.RED, Fore.WHITE)
-            location = raw_input("    "+arrow + "phonesploit"+Fore.RED + "(wpa_grab) "+Fore.WHITE + "> ")      
-            os.system("adb -s "+device_name+" shell "+"su -c 'cp /data/misc/wifi/wpa_supplicant.conf /sdcard/'")
-            os.system("adb -s "+device_name+" pull /sdcard/wpa_supplicant.conf "+location)
-        except KeyboardInterrupt:
-            main()    
-
-    elif option == '18':
-        print  ("\n[{0}+{1}]Enter a device name.").format(Fore.RED, Fore.WHITE)
-        device_name = raw_input(arrow + "phonesploit"+Fore.RED + "(mac_inet) "+Fore.WHITE + "> ")
-        os.system("adb -s " +device_name+ " shell ip address show wlan0")
-        main()
-
-    elif option == '19':
-        print  ("\n[{0}+{1}]Enter a device name.").format(Fore.RED, Fore.WHITE)
-        device_name = raw_input(arrow + "phonesploit"+Fore.RED + "(pull_apk) "+Fore.WHITE + "> ")
-        print("     "+connect)
-        print  ("    [{0}+{1}]Enter a package name. They look like this --> com.snapchat.android").format(Fore.RED, Fore.WHITE)
-        package_name = raw_input("    "+arrow + "phonesploit"+Fore.RED + "(pull_apk) "+Fore.WHITE + "> ")
-        os.system("adb -s "+device_name+" shell pm path "+package_name)
-        print("         "+connect)       
-        print  ("        [{0}+{1}]Enter The path.looks like this /data/app/com.snapchat.android-qWgDcBiCEvANq6op_NPqeA==/base.apk").format(Fore.RED, Fore.WHITE)
-        path = raw_input("        "+arrow + "phonesploit"+Fore.RED + "(pull_apk) "+Fore.WHITE + "> ")
-        print("             "+connect)
-        print("            [{0}+{1}]Enter The location to store the apk: ")  .format(Fore.RED, Fore.WHITE)
-        location =   raw_input("            "+arrow + "phonesploit"+Fore.RED + "(pull_apk) "+Fore.WHITE + "> ")
-        os.system("adb -s " +device_name+" pull "+path+" "+location)
-        main()
-
-    elif option == '20':
-        print  ("\n[{0}+{1}]Enter a device name.").format(Fore.RED, Fore.WHITE)
-        device_name = raw_input(arrow + "phonesploit"+Fore.RED + "(battery) "+Fore.WHITE + "> ")
-        os.system("adb -s " +device_name+ " shell dumpsys battery")
-        main()
-
-    elif option == '21':
-        print  ("\n[{0}+{1}]Enter a device name.").format(Fore.RED, Fore.WHITE)
-        device_name = raw_input(arrow + "phonesploit"+Fore.RED + "(net_stat) "+Fore.WHITE + "> ")
-        os.system("adb -s " +device_name+ " shell netstat")
-        main()
-
-
     elif option  == '0':
         os.system('cls')
         banner_title = random.choice([logo_design_1,logo_design_2,logo_design_3,logo_design_4])
         print Fore.RED + banner_title  
         print message
-
 
     elif option == '99':
         exit()
@@ -277,15 +227,12 @@ def main():
 
 #=============================  
 # Run
-try:
-    os.chdir(CurrentDir+"//adb")
-    print (Fore.RED + "Starting  adb server..")
-    os.system("adb tcpip 5555")
-    t.sleep(4)
-    os.system('cls')
-    banner_title = random.choice([logo_design_1,logo_design_2,logo_design_3,logo_design_4])
-    print Fore.RED + banner_title  
-    print message
-    ColoringModeStartup()
-except KeyboardInterrupt:
-    main()
+os.chdir(CurrentDir+"//adb")
+print (Fore.RED + "Starting  adb server..")
+os.system("adb tcpip 5555")
+t.sleep(4)
+os.system('cls')
+banner_title = random.choice([logo_design_1,logo_design_2,logo_design_3,logo_design_4])
+print Fore.RED + banner_title  
+print message
+ColoringModeStartup()
