@@ -42,9 +42,9 @@ load_count = 0
 #=============================
 # Graphics # http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
 
-arrow = Fore.RED + "  └──>".decode("utf-8").strip() + Fore.WHITE
+arrow = Fore.RED + u'  └──>'.decode("utf-8").strip() + Fore.WHITE
 arrow = str(arrow)
-connect = Fore.RED + "│".decode("utf-8").strip() + Fore.WHITE
+connect = Fore.RED + u'│'.decode("utf-8").strip() + Fore.WHITE
 
 logo_design_1 = ('''
   {0}  ____  __                    _____       __      _ __ 
