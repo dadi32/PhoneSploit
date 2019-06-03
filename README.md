@@ -1,5 +1,6 @@
 # Recent News
 <br> An Update is coming along with some new options
+<br> This update will have 9 new options!
 
 # PhoneSploit 
 Using open Adb ports we can exploit a device
