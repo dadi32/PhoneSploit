@@ -103,8 +103,7 @@ message = '''\n
 #=============================
 #Main
 def main():
-    global load_count
-    os.chdir(CurrentDir+"//adb")
+    global load_counts
     while load_count == 0:
         print (Fore.RED + "Starting  adb server..")
         os.system("adb tcpip 5555")
