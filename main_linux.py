@@ -211,7 +211,7 @@ def main():
         os.system("adb -s "+device_name+" forward tcp:"+port_device+" tcp:"+forward_port) 
 
     elif option  == '0':
-        os.system('cls')
+        os.system('clear')
         banner_title = random.choice([logo_design_1,logo_design_2,logo_design_3,logo_design_4])
         print Fore.RED + banner_title  
         print message
@@ -232,7 +232,7 @@ if yn == "n":
 print (Fore.RED + "Starting  adb server..")
 os.system("adb tcpip 5555")
 t.sleep(4)
-os.system('cls')
+os.system('clear')
 banner_title = random.choice([logo_design_1,logo_design_2,logo_design_3,logo_design_4])
 print Fore.RED + banner_title  
 print message
