@@ -1,3 +1,6 @@
+#Recent News
+<br> An Update is coming along with some new options
+
 # PhoneSploit 
 Using open Adb ports we can exploit a device
 <br> you can find open ports here https://www.shodan.io/search?query=android+debug+bridge+product%3A”Android+Debug+Bridge”
