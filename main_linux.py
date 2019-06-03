@@ -42,7 +42,7 @@ load_count = 0
 #=============================
 # Graphics # http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
 
-arrow = Fore.RED + '  '-->'.encode("utf-8").strip() + Fore.WHITE
+arrow = Fore.RED + '   -->'.encode("utf-8").strip() + Fore.WHITE
 arrow = str(arrow)
 connect = Fore.RED + '|'.encode("utf-8").strip() + Fore.WHITE
 
