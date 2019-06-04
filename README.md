@@ -1,6 +1,9 @@
-# Recent News
-<br> An Update is coming along with some new options
-<br> This update will have 9 new options!
+# Recent News (New Update v.1.2)
+Port Forwarding<br>        NetStat <br>
+Grab wpa_supplicant <br>   Turn WiFi On/Off <br>                
+Show Mac/Inet<br>          Remove Password<br>
+Extract apk from app<br>   Use Keycode <br>           
+Get Battery Status<br>     Get Current Activity<br>   
 
 # PhoneSploit 
 Using open Adb ports we can exploit a device
