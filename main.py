@@ -80,7 +80,7 @@ logo_design_4 = '''
         +mMMMMMMMMMMMMm+
       `dMMm\033[0m:\033[92mNMMMMMMN\033[0m:\033[92mmMMd`
       hMMMMMMMMMMMMMMMMMMh
-  \033[92m..  yyyyyyyyyyyyyyyyyyyy  ..              \033[0m Expoit time :) \033[92m
+  \033[92m..  yyyyyyyyyyyyyyyyyyyy  ..              \033[0m Exploit time :) \033[92m
 \033[92m.mMMm`MMMMMMMMMMMMMMMMMMMM`mMMm.            \033[0m Thanks for downloading!\033[92m
 \033[92m:MMMM-MMMMMMMMMMMMMMMMMMMM-MMMM:
 :MMMM-MMMMMMMMMMMMMMMMMMMM-MMMM:
