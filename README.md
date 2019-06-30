@@ -28,6 +28,10 @@ cd PhoneSploit
 pip install colorama
 python2 main_linux.py
 ```
+# IF ADB NOT FOUND
+sudo apt update
+sudo apt install android-tools-adb android-tools-fastboot
+
 
 
 # VIDEO
